@@ -1,0 +1,17 @@
+apply_anthropic_pattern:
+  description: "This task checks (or generates) code to ensure it aligns with Anthropic design guidelines—i.e., helpful, honest, harmless, and grounded."
+  expected_output: "A summary of how well the code meets each principle (e.g., “No harmful content detected,” “Groundedness at 80%,” etc.)."
+  agents:
+    - design_agent
+
+review_design_pattern:
+  description: "This task analyzes code for general quality: linting errors, code smells, duplication, and potential anti-patterns."
+  expected_output: "A detailed report (e.g., warnings, error counts) describing any code issues."
+  agents:
+    - review_agent
+
+propose_refactoring_plan:
+  description: "This task examines any design or quality issues found and recommends specific steps to fix them—such as “Extract function X to a separate module,” or “Implement Strategy pattern in module Y.”"
+  expected_output: "A step-by-step refactoring guide (bullet points or a structured plan)."
+  agents:
+    - refactoring_agent
